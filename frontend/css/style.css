@@ -1,0 +1,227 @@
+:root {
+  /* Default Light Theme */
+  --bg-main: #f0f2f5;
+  --bg-panel: #ffffff;
+  --bg-hover: #f3f4f6;
+  --bg-input: #f0f2f5;
+  --bg-message-sent: #0084ff;
+  --bg-message-received: #e4e6eb;
+  
+  --text-primary: #050505;
+  --text-secondary: #65676B;
+  --text-message-sent: #ffffff;
+  --text-message-received: #050505;
+  
+  --border-color: #e4e6eb;
+  
+  --accent: #0084ff;
+  --accent-hover: #0073e6;
+  --danger: #dc3545;
+  
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --bg-main: #0f172a;
+  --bg-panel: #1e293b;
+  --bg-hover: #334155;
+  --bg-input: #0f172a;
+  --bg-message-sent: #3b82f6;
+  --bg-message-received: #334155;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-message-sent: #ffffff;
+  --text-message-received: #f8fafc;
+  
+  --border-color: #334155;
+  
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  height: 100vh;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Typography utilities */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-muted { color: var(--text-secondary); }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.icon-btn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Utilities */
+.hidden { display: none !important; }
+.me-2 { margin-right: 0.5rem; }
+.ms-2 { margin-left: 0.5rem; }
+
+/* Status Indicators */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+}
+
+.status-indicator.online {
+  background-color: #22c55e;
+}
+
+/* Avatars */
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--bg-hover);
+}
+
+.avatar-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--bg-hover);
+}
+
+/* Notifications */
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notification {
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--accent);
+  animation: slideIn 0.3s ease forwards;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.notification.error {
+  border-left-color: var(--danger);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

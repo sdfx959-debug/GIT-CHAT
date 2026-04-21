@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": "1775732895639",
+      "email": "fazliddinacer@gmail.com",
+      "username": "Fazliddin",
+      "password": "$2b$10$g6tCucm3RJx65X8.g9pQJ.PL9BmZ3oOXGOEbhxVsZ1XwuweF1CPOq",
+      "profileImage": "https://api.dicebear.com/7.x/initials/svg?seed=Fazliddin",
+      "contacts": [
+        "1775733041703"
+      ],
+      "status": "offline",
+      "lastSeen": "2026-04-09T11:11:03.460Z"
+    },
+    {
+      "id": "1775733041703",
+      "email": "sdfx@gmail.com",
+      "username": "aaa",
+      "password": "$2b$10$O.T88hbenexWeyjBnNkB5OwpvgxLiaxLV4zcn0A9FbH5wIhyKP1IW",
+      "profileImage": "https://api.dicebear.com/7.x/initials/svg?seed=aaa",
+      "contacts": [
+        "1775732895639"
+      ],
+      "status": "offline",
+      "lastSeen": "2026-04-09T11:11:04.253Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1775733055804",
+      "senderId": "1775732895639",
+      "receiverId": "1775733041703",
+      "text": "as",
+      "timestamp": "2026-04-09T11:10:55.804Z",
+      "status": "seen"
+    }
+  ]
+}
